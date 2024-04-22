@@ -24,6 +24,9 @@ if vDrive == "C:":
 else:
     vpth = "./"
 
+
+
+
 # Create a template for large text style
 sbe = """<span style='font-size: 140px;
                       border-radius: 7px;
@@ -203,6 +206,8 @@ def PressedCheck(vcell):
     """
     Checks if a cell button has been pressed and performs corresponding actions.
     """
+
+    
     if mystate.plyrbtns[vcell]['isPressed'] == False:  # Check if the cell button has not been pressed yet.
         mystate.plyrbtns[vcell]['isPressed'] = True  # Mark the cell button as pressed.
         mystate.expired_cells.append(vcell)  # Add the cell index to the list of expired cells.
@@ -231,6 +236,7 @@ def ResetBoard():
     """
     total_cells_per_row_or_col = mystate.GameDetails[2]  # Get the total number of cells per row or column.
 
+    
     # Select a random emoji for the sidebar.
     sidebar_emoji_no = random.randint(1, len(mystate.emoji_bank)) - 1
     mystate.sidebar_emoji = mystate.emoji_bank[sidebar_emoji_no]
@@ -397,6 +403,7 @@ def NewGame():
                 globals()['cols' + arr_ref][vcell-mval].markdown(pressed_emoji.replace('|fill_variable|', '❌'), True)
                 errores+=1
 
+        
         else:
             vemoji = mystate.plyrbtns[vcell]['eMoji']
             globals()['cols' + arr_ref][vcell-mval].button(vemoji, on_click=PressedCheck, args=(vcell, ), key=f"B{vcell}")
