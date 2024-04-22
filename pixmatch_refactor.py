@@ -7,7 +7,12 @@ import json
 from PIL import Image
 from streamlit_autorefresh import st_autorefresh
 
+
+
+
 # General page attributes configuration
+
+
 st.set_page_config(page_title="PixMatch", page_icon="🕹️", layout="wide", initial_sidebar_state="expanded")
 
 # Get the disk drive where the current directory is located
@@ -117,10 +122,9 @@ def Leaderboard(what_to_do):
                 leaderboard = dict(sorted(leaderboard.items(), key=lambda item: item[1]['HighestScore'], reverse=True))  # sort descending
 
                 if len(leaderboard) > 4:
-                    for i in range(len(leaderboard) - 4):
-                        leaderboard.popitem()
+                    for i in range(len(leaderboard) - 4): leaderboard.popitem()
 
-                json.dump(leaderboard, open(vpth + 'leaderboard.json', 'w'))  # write to file
+                json.dump(leaderboard, open(vpth + 'leaderboard.json', 'w'))  # write to file 
 
     elif what_to_do == 'read':
         # Read the leaderboard if the player name is available
@@ -130,6 +134,8 @@ def Leaderboard(what_to_do):
 
                 leaderboard = dict(sorted(leaderboard.items(), key=lambda item: item[1]['HighestScore'], reverse=True))  # sort descending
 
+
+                
                 sc0, sc1, sc2, sc3, sc4 = st.columns((2, 3, 3, 3, 3))
                 rknt = 0
                 for vkey in leaderboard.keys():
@@ -271,6 +277,8 @@ def PreNewGame():
     blue_signs = ['🚾', '♿️', '🅿️', '🈂️', '🛂', '🛃', '🛄', '🛅', '🚹', '🚺', '🚻', '🚮', '🎦', '📶', '🈁', '🔣', '🔤', '🔡', '🔠', '🆖', '🆗', '🆙', '🆒', '🆕', '🆓', '0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟', '🔢', '⏏️', '▶️', '⏸', '⏯', '⏹', '⏺', '⏭', '⏮', '⏩', '⏪', '⏫', '⏬', '◀️', '🔼', '🔽', '➡️', '⬅️', '⬆️', '⬇️', '↗️', '↘️', '↙️', '↖️', '↪️', '↩️', '⤴️', '⤵️', '🔀', '🔁', '🔂', '🔄', '🔃', '➿', '🔚', '🔙', '🔛', '🔝', '🔜']
     moon = ['🌕', '🌔', '🌓', '🌗', '🌒', '🌖', '🌑', '🌜', '🌛', '🌙']
 
+
+
     random.seed()
     # Select a random emoji list depending on the difficulty level.
     if mystate.GameDetails[0] == 'Easy':
@@ -335,20 +343,14 @@ def NewGame():
 
     # Set Board Defaults
     st.markdown("<style> div[class^='css-1vbkxwb'] > p { font-size: 1.5rem; } </style> ", unsafe_allow_html=True)  # Makes button face big
-    errores = 0
     for i in range(1, (total_cells_per_row_or_col+1)):
         tlst = ([1] * total_cells_per_row_or_col) + [2]  
         globals()['cols' + str(i)] = st.columns(tlst)
 
     for vcell in range(1, (total_cells_per_row_or_col ** 2)+1):
-        if errores == (total_cells_per_row_or_col ** 1)+1:
-            mystate.runpage = Main
-            st.rerun()
-            break
         if 1 <= vcell <= (total_cells_per_row_or_col * 1):
-            arr_ref = '1'
+            arr_ref = '1'           
             mval = 0
-
         elif ((total_cells_per_row_or_col * 1)+1) <= vcell <= (total_cells_per_row_or_col * 2):
             arr_ref = '2'
             mval = (total_cells_per_row_or_col * 1)
