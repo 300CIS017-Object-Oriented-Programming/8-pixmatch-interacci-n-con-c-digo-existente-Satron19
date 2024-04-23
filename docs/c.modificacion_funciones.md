@@ -9,7 +9,7 @@
 ![img_8.png](img/img_8.png)
 
 #### Usuario pierde el juego cuando supera un máximo posible de fallos.
-
+![img_9.png](img/img_9.png)
 ## Encuesta de la experiencia
 Por favor, responde las siguientes preguntas basadas en tu experiencia modificando el código para incluir cuatro personas en el leaderboard en lugar de tres.
 
