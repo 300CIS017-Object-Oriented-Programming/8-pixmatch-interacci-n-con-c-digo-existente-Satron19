@@ -357,6 +357,9 @@ def NewGame():
         if 1 <= vcell <= (total_cells_per_row_or_col * 1):
             arr_ref = '1'           
             mval = 0
+        elif cont == (total_cells_per_row_or_col * 1)+1:
+            mystate.runpage = Main
+            st.rerun() 
         elif ((total_cells_per_row_or_col * 1)+1) <= vcell <= (total_cells_per_row_or_col * 2):
             arr_ref = '2'
             mval = (total_cells_per_row_or_col * 1)
