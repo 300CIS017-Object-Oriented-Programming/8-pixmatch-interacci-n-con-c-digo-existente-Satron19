@@ -45,3 +45,66 @@ Detalla en este markdown lo siguiente:
 - **Métodos Importantes:** Enumera los métodos principales para cada clase. Incluye una descripción de cuál sería la utilidad de cada método
 - **Imagen del UML del diagrama de clases**  Adjunta una imagen del UML del diagrama de clases como una forma visual de planificar y entender la estructura de las clases, métodos, atributos y relaciones que podría tener una versión mejorada del código fuente.
 - **Organización de archivos:** Propon una estructura de organización de los archivos de este proyecto para que no queden todos en la raiz principal. Investiga cuáles podrían ser buenas formas de organizar los directorios y a partir de tu investigación indica qué directorios crearías y cómo los organizarías. 
+
+
+# Mejoras para pasar a Programación Orientada a Objetos (POO)
+
+## Clases a Definir
+
+### Jugador
+- **Propósito:** Representa a un jugador del juego.
+- **Justificación:** Un jugador es una entidad principal en el juego y necesita encapsular sus datos como nombre, puntaje, etc.
+- **Atributos:**
+  - Nombre: El nombre del jugador.
+  - Puntaje: El puntaje acumulado por el jugador.
+- **Métodos Importantes:**
+  - incrementarPuntaje(): Incrementa el puntaje del jugador.
+  - obtenerNombre(): Devuelve el nombre del jugador.
+  - obtenerPuntaje(): Devuelve el puntaje actual del jugador.
+
+### Tablero
+- **Propósito:** Representa el tablero de juego.
+- **Justificación:** El tablero es una entidad central en el juego y necesita mantener la información sobre el estado del juego.
+- **Atributos:**
+  - Estado: Una representación del estado actual del tablero (por ejemplo, matriz de posiciones).
+- **Métodos Importantes:**
+  - inicializarTablero(): Inicializa el tablero con el estado inicial.
+  - actualizarEstado(): Actualiza el estado del tablero después de cada movimiento.
+  - verificarVictoria(): Verifica si hay un ganador en el juego.
+
+### Juego
+- **Propósito:** Controla el flujo del juego.
+- **Justificación:** El juego coordina las interacciones entre los jugadores y el tablero.
+- **Atributos:**
+  - Jugadores: Una lista de jugadores participantes en el juego.
+  - Tablero: El tablero de juego.
+- **Métodos Importantes:**
+  - iniciarJuego(): Inicia el juego y configura el tablero.
+  - realizarMovimiento(): Realiza un movimiento en el juego.
+  - finalizarJuego(): Finaliza el juego y determina al ganador.
+
+## Métodos Importantes
+- **Jugador:**
+  - incrementarPuntaje(): Incrementa el puntaje del jugador.
+  - obtenerNombre(): Devuelve el nombre del jugador.
+  - obtenerPuntaje(): Devuelve el puntaje actual del jugador.
+- **Tablero:**
+  - inicializarTablero(): Inicializa el tablero con el estado inicial.
+  - actualizarEstado(): Actualiza el estado del tablero después de cada movimiento.
+  - verificarVictoria(): Verifica si hay un ganador en el juego.
+- **Juego:**
+  - iniciarJuego(): Inicia el juego y configura el tablero.
+  - realizarMovimiento(): Realiza un movimiento en el juego.
+  - finalizarJuego(): Finaliza el juego y determina al ganador.
+
+## Imagen del UML
+![img_10.png](img/img_10.png)
+
+## Organización de archivos
+proyecto/
+│
+├── src/
+│ ├── jugador.py
+│ ├── tablero.py
+│ └── juego.py
+Donde `src/` contendría los archivos fuente de las clases.
