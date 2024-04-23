@@ -20,7 +20,7 @@ vDrive = os.path.splitdrive(os.getcwd())[0]
 
 # Set the local developer directory path
 if vDrive == "C:":
-    vpth = "C:/Users/Shawn/dev/utils/pixmatch/"   # local developer's disk
+    vpth = "C:\Users\sammt\Downloads\8-pixmatch-interacci-n-con-c-digo-existente-Satron19-main\8-pixmatch-interacci-n-con-c-digo-existente-Satron19-main"   # local developer's disk
 else:
     vpth = "./"
 
